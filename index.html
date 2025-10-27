@@ -6,49 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Collin Ferguson — Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 
 <body>
-    <header>
-        <div class="brand">Collin Ferguson</div>
-
-        <nav class="navbar" aria-label="Main navigation">
-            <button id="menuButton" class="mobile-menu" aria-haspopup="true" aria-expanded="false">
-                <span class="menu-icon">☰</span>
-            </button>
-
-            <ul id="menu" class="nav-menu">
-                <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="about.html" class="dropdown-trigger">About Me</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html#Bio">Bio</a></li>
-                        <li><a href="#about.html#Skills">Skills</a></li>
-                        <li><a href="#about.html#Experience">Experience</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#work" class="dropdown-trigger">Work</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#work#projects">Projects</a></li>
-                        <li><a href="#work#case-studies">Case Studies</a></li>
-                        <li><a href="#work#achievements">Achievements</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="#refrences">References</a></li>
-                <li class="nav-item"><a href="#press">Press</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#photos" class="dropdown-trigger">Photos</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#photos#portfolio">Portfolio</a></li>
-                        <li><a href="#photos#events">Events</a></li>
-                        <li><a href="#photos#personal">Personal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section id="home" class="home-section">
@@ -85,13 +47,15 @@
 
             <footer class="social-footer">
                 <div class="social-icons">
-                    <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/collin-ferguson-57a4b42b1/" class="social-icon linkedin"
+                        aria-label="LinkedIn">
                         <img src="icons/linkedinIcon.svg" alt="LinkedIn" class="social-svg">
                     </a>
                     <a href="#" class="social-icon twitter" aria-label="Twitter">
                         <img src="icons/twitterIcon.svg" alt="Twitter" class="social-svg">
                     </a>
-                    <a href="#" class="social-icon instagram" aria-label="Instagram">
+                    <a href="https://www.instagram.com/c.ferguson25/?__pwa=1" class="social-icon instagram"
+                        aria-label="Instagram">
                         <img src="icons/instagramIcon.svg" alt="Instagram" class="social-svg">
                     </a>
                     <a href="mailto:your.email@example.com" class="social-icon email" aria-label="Email">
@@ -106,6 +70,8 @@
     </main>
 
     <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+    <script src="theme.js" defer></script>
 </body>
 
 </html>

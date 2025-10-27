@@ -42,7 +42,7 @@ header {
 }
 
 header:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg);
     box-shadow: var(--neon-glow);
 }
 

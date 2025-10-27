@@ -7,50 +7,14 @@
     <title>About Me - Collin Ferguson</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="theme.css">
     <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+    <script src="theme.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="brand">Collin Ferguson</div>
-
-        <nav class="navbar" aria-label="Main navigation">
-            <button id="menuButton" class="mobile-menu" aria-haspopup="true" aria-expanded="false">
-                <span class="menu-icon">☰</span>
-            </button>
-
-            <ul id="menu" class="nav-menu">
-                <li class="nav-item"><a href="index.html#home">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="about.html" class="dropdown-trigger active">About Me</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#Bio">Bio</a></li>
-                        <li><a href="#Skills">Skills</a></li>
-                        <li><a href="#Experience">Experience</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="index.html#work" class="dropdown-trigger">Work</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html#work#projects">Projects</a></li>
-                        <li><a href="index.html#work#case-studies">Case Studies</a></li>
-                        <li><a href="index.html#work#achievements">Achievements</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="index.html#refrences">References</a></li>
-                <li class="nav-item"><a href="index.html#press">Press</a></li>
-                <li class="nav-item dropdown">
-                    <a href="index.html#photos" class="dropdown-trigger">Photos</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html#photos#portfolio">Portfolio</a></li>
-                        <li><a href="index.html#photos#events">Events</a></li>
-                        <li><a href="index.html#photos#personal">Personal</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <div class="container">
         <h1>About Me</h1>
@@ -67,9 +31,29 @@
 
         <div class="section">
             <h2>My Journey</h2>
-            <p>From writing my first line of code to developing full-stack applications, my path in technology has been
-                driven by curiosity and a desire to create meaningful solutions. I'm constantly learning and adapting to
-                new technologies while maintaining a strong foundation in software development principles.</p>
+            <p>I am a graduate of the University of Pittsburgh, receiving a BA in communication with a certificate in
+                television and broadcast arts and graduating Summa Cum Laude.
+
+                ​
+
+                Hailing from Lancaster, PA, I was previously the anchor, news director, political reporter, city beat
+                reporter, and producer for Pitt to the Point, Pitt's first hour-long news broadcast. Currently I am the
+                lead host of KDKA's Next Take, commercial radio's first show hosted by college students. I also held the
+                positions of DJ and sports analyst at WPTS Radio and social media intern at the university's Department
+                of Communication. I have also held the position of as the head videographer and correspondent with The
+                Pitt News, interned with the University of Pittsburgh's Marketing and Communication Division of Student
+                Affairs and the multimedia division of the University of Pittsburgh's Athletic Department.
+
+                ​
+
+                I am a passionate, tenacious, and detail-oriented reporter with work featured on national news outlets
+                such as NBC, CNN, and HLN. In my free time, I love singing, spending time with my family and friends,
+                and watching movies and baseball.
+
+                ​
+
+                I am profoundly fortunate to have had the opportunity to cover some extremely important stories that
+                impact the community..</p>
             <img src="images/background.jpg" alt="Development Journey" class="background-image">
         </div>
 
@@ -77,20 +61,20 @@
             <h2>Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Web Development</h3>
-                    <p>HTML5, CSS3, JavaScript</p>
+                    <h3>Broadcasting</h3>
+                    <p>FILL IN</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Programming</h3>
-                    <p>Python, Java, C++</p>
+                    <h3>Editing</h3>
+                    <p>FILL IN</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Frameworks</h3>
-                    <p>React, Node.js, Express</p>
+                    <h3>Producing</h3>
+                    <p>FILL IN</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Tools</h3>
-                    <p>Git, VS Code, Docker</p>
+                    <h3>Casting</h3>
+                    <p>FILL IN</p>
                 </div>
             </div>
         </div>
@@ -115,16 +99,10 @@
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>collin.ferguson@email.com</span>
+                <span>EMAIL</span>
             </div>
             <div class="contact-info">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                    </path>
-                </svg>
-                <span>github.com/collinferguson</span>
+                <span>INSTAGRAM</span>
             </div>
             <div class="contact-info">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
