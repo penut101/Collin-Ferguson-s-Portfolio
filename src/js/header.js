@@ -1,7 +1,7 @@
 // Function to load and inject the shared header
 async function loadHeader() {
     try {
-        const response = await fetch('header.html');
+        const response = await fetch('src/html/header.html');
         const headerHtml = await response.text();
         
         // Create a temporary container
