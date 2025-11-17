@@ -1,10 +1,18 @@
 // Function to load and inject the shared header
 async function loadHeader() {
     try {
-        // Determine whether current page lives in src/html/ (pages like src/html/about.html)
-    const inSrcHtml = window.location.pathname.includes('/src/html/') || window.location.pathname.includes('\\src\\html\\');
-        // Use a fetch path that works from both root and src/html pages
-        const fetchPath = inSrcHtml ? 'header.html' : 'src/html/header.html';
+        // Normalize path separators and detect where this page lives:
+        // - inSrcHtml: pages under /src/html/
+        // - inSrcRoot: pages directly under /src/ (e.g. /src/index.html)
+        const pathname = window.location.pathname.replace(/\\\\/g, '/');
+        const inSrcHtml = pathname.includes('/src/html/');
+        const inSrcRoot = pathname.includes('/src/') && !inSrcHtml;
+
+        // Choose fetch path for the shared header depending on page location
+        let fetchPath;
+        if (inSrcHtml) fetchPath = 'header.html';
+        else if (inSrcRoot) fetchPath = 'html/header.html';
+        else fetchPath = 'src/html/header.html';
         const response = await fetch(fetchPath);
         const headerHtml = await response.text();
         
@@ -34,19 +42,31 @@ async function loadHeader() {
                 let newHref = orig;
 
                 if (inSrcHtml) {
-                    // When on a page inside src/html/, header.html is in same folder.
-                    // Links pointing to index should go up one level.
+                    // Page lives in src/html/ — header is alongside it
                     if (base === 'index.html' || base === 'index') {
+                        // Link back to src/index.html
                         newHref = '../index.html' + frag;
                     } else if (base.startsWith('src/html/')) {
-                        // If header used a root-relative src path, collapse to local filename
+                        // collapse any hard-coded src/html/ prefix to local filename
                         newHref = base.split('/').pop() + frag;
                     } else {
-                        // keep local filenames (about.html, work.html, etc.) as-is
+                        // local filenames (about.html, work.html) are in same folder
                         newHref = base + frag;
                     }
+                } else if (inSrcRoot) {
+                    // Page lives directly under /src/ (e.g., /src/index.html)
+                    if (base === 'index.html' || base === 'index') {
+                        // should point to /src/index.html
+                        newHref = 'index.html' + frag;
+                    } else if (base.startsWith('src/html/')) {
+                        // collapse to src/html/<page> relative to /src/
+                        newHref = base.replace(/^src\/html\//, 'html/') + frag;
+                    } else {
+                        // other pages live under /src/html/<page>
+                        newHref = 'html/' + base + frag;
+                    }
                 } else {
-                    // When on a root page (index.html), other pages live in src/html/
+                    // Page is at project root — header should point into src/html/
                     if (base === 'index.html' || base === 'index') {
                         newHref = 'index.html' + frag;
                     } else if (base.startsWith('src/html/')) {
