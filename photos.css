@@ -1,0 +1,39 @@
+/* photos.css - Collage styling, matches site theme */
+@import url('theme.css');
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: var(--background, #fff);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color, #333);
+}
+
+.photo-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.photo-collage img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.photo-collage img:hover {
+    transform: scale(1.04) rotate(-2deg);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    z-index: 2;
+}
