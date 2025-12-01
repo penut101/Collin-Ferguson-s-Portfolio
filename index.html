@@ -19,72 +19,46 @@
                 <div class="headshot-container">
                     <img src="/images/headshot.png" alt="Collin Ferguson" class="headshot" id="headshot">
                     <!-- Lightbox for headshot -->
-                    <span id="typed-headshot" class="typed-headshot"></span>
                     <div id="headshot-modal" class="modal">
                         <span class="modal-close">&times;</span>
                         <img src="/images/headshot.png" alt="Collin Ferguson" class="modal-content" id="modal-img">
                     </div>
                 </div>
-
-                <div class="media-section">
-                    <div class="audio-player">
-                        <h2>Audio Reel</h2>
-                        <audio controls class="custom-audio">
-                            <source src="audio-reel.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-
-                    <!-- <div class="video-player">
-                        <h2>Featured Video</h2>
-                        <div class="video-container">
-                            <video controls class="custom-video">
-                                <source src="demo-reel.mp4" type="video/mp4">
-                                Your browser does not support the video element.
-                            </video>
-                        </div>
-                    </div>-->
+                <div class="typed-container">
+                    <span id="typed-headshot" class="typed-headshot"></span>
                 </div>
             </div>
 
-            <footer class="social-footer">
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/collin-ferguson-57a4b42b1/" class="social-icon linkedin"
-                        aria-label="LinkedIn">
-                        <img src="icons/linkedinIcon.svg" alt="LinkedIn" class="social-svg">
-                    </a>
-                    <a href="https://x.com/C_Fergus25?s=20" class="social-icon twitter" aria-label="Twitter">
-                        <img src="icons/twitterIcon.svg" alt="Twitter" class="social-svg">
-                    </a>
-                    <a href="https://www.instagram.com/c.ferguson25/?__pwa=1" class="social-icon instagram"
-                        aria-label="Instagram">
-                        <img src="icons/instagramIcon.svg" alt="Instagram" class="social-svg">
-                    </a>
-                    <a href="mailto:collinmferg@gmail.com" class="social-icon email" aria-label="Email">
-                        <img src="icons/emailIcon.svg" alt="Email" class="social-svg">
-                    </a>
+            <div class="media-section">
+                <div class="audio-player">
+                    <h2>Audio Reel</h2>
+                    <audio controls class="custom-audio">
+                        <source src="audio-reel.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
-                <div class="footer-text">
-                    © 2025 Collin Ferguson. All rights reserved.
-                </div>
-            </footer>
+
+                <!-- <div class="video-player">
+                    <h2>Featured Video</h2>
+                    <div class="video-container">
+                        <video controls class="custom-video">
+                            <source src="demo-reel.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>-->
+            </div>
+
+            <div id="footer-placeholder"></div>
         </section>
     </main>
 
     <script src="script.js" defer></script>
     <script src="header.js" defer></script>
+    <script src="footer.js" defer></script>
     <script src="theme.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- Typed.js CDN -->
-    <script>
-        var typed = new Typed('#typed-headshot', {
-            strings: ["Aiden Nemeroff"],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: false,
-            showCursor: false
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="typed-init.js" defer></script>
 </body>
 
 </html>
