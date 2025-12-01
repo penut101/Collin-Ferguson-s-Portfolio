@@ -1,19 +1,63 @@
 /* photos.css - Collage styling, matches site theme */
 @import url('theme.css');
 
-main {
+:root {
+    /* Light theme variables (default) */
+    --bg: #ffffff;
+    --fg: #111;
+    --accent: #0a84ff;
+    --accent-gradient: linear-gradient(135deg, #0a84ff, #00e5ff);
+    --shadow: 0 6px 18px rgba(10, 10, 10, .08);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --neon-glow: 0 0 10px rgba(10, 132, 255, 0.5),
+                 0 0 20px rgba(10, 132, 255, 0.3),
+                 0 0 30px rgba(10, 132, 255, 0.1);
+}
+
+[data-theme="dark"] {
+    /* Dark theme variables */
+    --bg: #0a0a0a;
+    --fg: #ffffff;
+    --accent: #3b82f6;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #00e5ff);
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    --glass-bg: rgba(20, 20, 20, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --neon-glow: 0 0 10px rgba(59, 130, 246, 0.5),
+                 0 0 20px rgba(59, 130, 246, 0.3),
+                 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.container {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: var(--background, #fff);
-    border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+main {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f9f9fb 50%, #ffffff 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+[data-theme="dark"] main {
+    background: linear-gradient(135deg, #0a0e27 0%, #0a0a0a 50%, #111 100%);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary-color, #333);
+    margin: 2rem 0 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .photo-collage {
@@ -21,6 +65,8 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
     padding: 1rem 0;
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.2s;
 }
 
 .photo-collage img {
@@ -32,8 +78,38 @@ h1 {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+[data-theme="dark"] .photo-collage img {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.40);
+}
+
 .photo-collage img:hover {
     transform: scale(1.04) rotate(-2deg);
     box-shadow: 0 6px 24px rgba(0,0,0,0.18);
     z-index: 2;
+}
+
+[data-theme="dark"] .photo-collage img:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.50);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .photo-collage {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .photo-collage img {
+        height: 150px;
+    }
 }

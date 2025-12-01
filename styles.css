@@ -645,8 +645,19 @@ main {
     filter: brightness(0) saturate(100%);
 }
 
+[data-theme="dark"] .social-svg {
+    /* Make SVG white in dark mode */
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
 .social-icon:hover .social-svg {
     /* Make SVG white when parent is hovered */
+    filter: brightness(0) saturate(100%) invert(1);
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .social-icon:hover .social-svg {
+    /* Keep SVG white on hover in dark mode */
     filter: brightness(0) saturate(100%) invert(1);
     transform: scale(1.1);
 }
