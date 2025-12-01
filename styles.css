@@ -418,6 +418,59 @@ main {
     border: 3px solid var(--glass-border);
 }
 
+.typed-headshot {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 16px rgba(10, 132, 255, 0.15);
+    padding: 0.75rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
+    letter-spacing: 0.04em;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    user-select: none;
+    min-height: 3.5rem;
+    display: inline-block;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typed-headshot:hover {
+    text-shadow: 0 4px 24px rgba(10, 132, 255, 0.35), 
+                0 8px 32px rgba(0, 229, 255, 0.2);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: var(--neon-glow), 
+               0 10px 30px rgba(10, 132, 255, 0.2);
+}
+
+/* Styled cursor for Typed.js */
+.typed-headshot::after {
+    content: '';
+    display: inline-block;
+    animation: typedCursor 0.7s infinite;
+    margin-left: 0.1em;
+}
+
+[data-theme="dark"] .typed-headshot {
+    text-shadow: 0 2px 24px rgba(59, 130, 246, 0.25);
+}
+
 .headshot:hover {
     transform: translateY(-10px) rotateY(10deg);
     box-shadow: var(--neon-glow),
