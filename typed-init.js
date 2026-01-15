@@ -12,4 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
       showCursor: false,
     });
   }
+
+  var subtitleElement = document.getElementById("typed-subtitle");
+  if (subtitleElement && window.Typed) {
+    new Typed("#typed-subtitle", {
+      strings: ["Sports Broadcaster", "Play-by-Play", "Radio Host"],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true,
+      showCursor: false,
+    });
+  }
 });
