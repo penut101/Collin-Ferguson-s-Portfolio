@@ -34,7 +34,12 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(10, 132, 255, 0.03) 0%, transparent 50%),
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(10, 132, 255, 0.1) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(0, 229, 255, 0.08) 50%, transparent 70%),
+        linear-gradient(90deg, transparent 40%, rgba(10, 132, 255, 0.05) 50%, transparent 60%),
+        linear-gradient(0deg, transparent 40%, rgba(0, 229, 255, 0.03) 50%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(10, 132, 255, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.02) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
@@ -396,13 +401,10 @@ main {
     margin: 0 auto;
 }
 
-/* Home section styles */
-.home-section {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 2rem 0;
+/* Ensure hero content is above background */
+.hero-container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-container {
@@ -697,9 +699,52 @@ main {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* Hide dropdown menus on mobile */
+    .dropdown-menu {
+        display: none !important;
+    }
+
+    /* Remove dropdown class behavior on mobile */
+    .dropdown {
+        position: static;
+    }
+
+    /* Header improvements */
+    header {
+        padding: 1rem;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    /* Hero section improvements */
+    .home-section {
+        min-height: calc(100vh - 60px); /* Account for smaller header */
+        padding: 1rem 0;
+    }
+
+    .hero-container {
+        gap: 2rem;
+        margin-bottom: 3rem;
+        padding-top: 1rem;
+    }
+
     .headshot-container {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .typed-headshot {
+        font-size: 2rem;
+    }
+
+    .typed-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .typed-bubble {
+        padding: 0.75rem 1.5rem;
     }
 
     .media-section {
@@ -713,6 +758,83 @@ main {
     .social-icon {
         width: 35px;
         height: 35px;
+    }
+
+    /* General spacing improvements */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Improve touch targets */
+    button, .nav-item, .social-icon {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Footer mobile improvements */
+    .social-footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Extra small screens (phones in portrait) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem;
+    }
+
+    .brand {
+        font-size: 0.9rem;
+    }
+
+    .hero-container {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-top: 0.5rem;
+    }
+
+    .headshot-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .typed-headshot {
+        font-size: 1.8rem;
+    }
+
+    .typed-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .typed-bubble {
+        padding: 0.5rem 1rem;
+    }
+
+    .social-icons {
+        gap: 0.75rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .theme-toggle {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        width: 44px;
+        height: 44px;
     }
 }
 

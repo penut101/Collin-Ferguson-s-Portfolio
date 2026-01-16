@@ -33,8 +33,13 @@
 }
 
 [data-theme="dark"] body::before {
-    background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 50%);
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.15) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(0, 229, 255, 0.12) 50%, transparent 70%),
+        linear-gradient(90deg, transparent 40%, rgba(59, 130, 246, 0.08) 50%, transparent 60%),
+        linear-gradient(0deg, transparent 40%, rgba(0, 229, 255, 0.05) 50%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 50%);
 }
 
 [data-theme="dark"] header {
@@ -44,10 +49,6 @@
 [data-theme="dark"] .section-dropdown {
     background: var(--glass-bg);
     border-color: var(--glass-border);
-}
-
-[data-theme="dark"] .section-dropdown summary:hover {
-    background: rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="dark"] .dropdown-menu {
